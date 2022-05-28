@@ -14,7 +14,11 @@ spec:
     spec:
       containers:
       - name: main
-        image: invoice-app:latest
+        image: vpts/invoice-app:latest
         imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8081
       securityContext:
         runAsNonRoot: true
+        runAsUser: 1000
+        

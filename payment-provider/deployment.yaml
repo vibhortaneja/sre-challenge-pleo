@@ -14,7 +14,11 @@ spec:
     spec:
       containers:
       - name: main
-        image: payment-provider:latest
+        image: vpts/payment-provider:latest
         imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8082
       securityContext:
         runAsNonRoot: true
+        runAsUser: 1000
+
